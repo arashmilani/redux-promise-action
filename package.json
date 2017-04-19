@@ -1,0 +1,24 @@
+{
+  "name": "redux-promise-action",
+  "version": "1.0.0",
+  "description": "An opinionated redux middleware to support async actions using promise",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arashmilani/redux-promise-action.git"
+  },
+  "keywords": [
+    "redux",
+    "promise",
+    "middleware"
+  ],
+  "author": "Arash Milani <me@arashmilani.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arashmilani/redux-promise-action/issues"
+  },
+  "homepage": "https://github.com/arashmilani/redux-promise-action#readme"
+}
