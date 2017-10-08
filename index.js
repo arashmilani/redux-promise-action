@@ -20,20 +20,20 @@ module.exports = store => next => action => {
     throw new Error('Action type should be either a string or an array.')
   }
 
-  
-  if(Array.isArray(actionType[0])) {
-    store.dispatch(Object.assign({type: actionType[0][0]},  actionType[0][1]))
-  }
-  else if(action.initPayload) {
-    store.dispatch(Object.assign({type: actionType[0]},  action.initPayload))
-  } else {
-    store.dispatch({type: actionType[0]})
-  }
-
+  let ref = action.ref || undefined
+  store.dispatch({type: actionType[0], ref } )
+ 
   action.promise.then(payload => {
-    store.dispatch({type: actionType[1], payload})
+    store.dispatch({type: actionType[1], payload, ref})
     if(action.done) action.done(payload)
   }).catch(error => {
-    store.dispatch({type: actionType[2], error})
+    error = {
+      message: error.message,
+      type: error.type,
+      code: error.code,
+      stack: error.stack,
+      list: error.list,
+    }
+    store.dispatch({type: actionType[2], error, ref})
   })
 }

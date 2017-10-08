@@ -1,6 +1,6 @@
 {
   "name": "redux-promise-action",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An opinionated redux middleware to support async actions using promise",
   "main": "index.js",
   "scripts": {
